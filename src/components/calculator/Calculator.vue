@@ -22,7 +22,8 @@
             placeholder="# of years"
             v-model="years"
           />
-          ago
+          years ago
+          <br />
         </label>
         <button class="btn btn-primary" @click="calculateProfit">
           Calculate
