@@ -24,7 +24,10 @@ export default new Vuex.Store({
             borderCapStyle: "",
             borderColor: ""
           }
-        ]
+        ],
+        options: {
+          responsive: true,
+        }
       },
     }
   },
@@ -94,7 +97,10 @@ export default new Vuex.Store({
               pointRadius: 0.5,
               pointHitRadius: 10,
             }
-          ]
+          ],
+          options: {
+            responsive: true,
+          }
         }
       }
 

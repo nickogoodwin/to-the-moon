@@ -12,7 +12,9 @@
     <div class="col-lg">
       <h2>
         Current {{ coinData.name }} Price:
-        {{ currencyFormatter(coinData.current_price) }}
+        <span class="money">
+          {{ currencyFormatter(coinData.current_price) }}</span
+        >
       </h2>
       <ChartContainer :chart-data="coinData.chartdata"></ChartContainer>
     </div>
@@ -54,11 +56,18 @@ export default {
         style: "currency",
         currency: "usd",
       });
-      let formattedPrice = formatter.format(price);
+
+      let formattedPrice;
+      if (price < 0.01) {
+        formattedPrice = `$${price}`;
+      } else {
+        formattedPrice = formatter.format(price);
+      }
+
       return formattedPrice;
     },
   },
-  created() {
+  mounted() {
     this.fillDataStore();
   },
 };

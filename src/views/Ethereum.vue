@@ -2,7 +2,7 @@
   <div
     class="coin row d-flex flex-row align-items-center jusify-content-center"
   >
-    <div class="col-lg">
+    <div class="col-lg-4">
       <CoinInfo
         :coinData="coinData"
         :coinId="coinId"
@@ -12,7 +12,9 @@
     <div class="col-lg">
       <h2>
         Current {{ coinData.name }} Price:
-        {{ currencyFormatter(coinData.current_price) }}
+        <span class="money">
+          {{ currencyFormatter(coinData.current_price) }}</span
+        >
       </h2>
       <ChartContainer :chart-data="coinData.chartdata"></ChartContainer>
     </div>
@@ -58,7 +60,7 @@ export default {
       return formattedPrice;
     },
   },
-  created() {
+  mounted() {
     this.fillDataStore();
   },
 };

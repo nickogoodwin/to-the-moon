@@ -93,7 +93,14 @@ export default {
         style: "currency",
         currency: "usd",
       });
-      let formattedPrice = formatter.format(price);
+
+      let formattedPrice;
+      if (price < 0.01) {
+        formattedPrice = `$${price}`;
+      } else {
+        formattedPrice = formatter.format(price);
+      }
+
       return formattedPrice;
     },
 
@@ -170,14 +177,10 @@ export default {
   padding: 2em;
   box-shadow: 0 0 2em #121212;
   border-radius: 2em;
+  width: 90%;
 }
 
 #coin-data-error {
   color: red;
-}
-
-.money {
-  color: darkgreen;
-  font-weight: bold;
 }
 </style>

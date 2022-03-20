@@ -54,4 +54,9 @@ body {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+span.money {
+  color: darkgreen;
+  font-weight: bold;
+}
 </style>

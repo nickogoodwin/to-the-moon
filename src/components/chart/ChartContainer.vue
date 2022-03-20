@@ -1,7 +1,9 @@
 <template>
   <div class="chart-container">
     <h1>Chart</h1>
-    <LineChart :chartData="this.chartData" />
+    <div class="line-chart-container">
+      <LineChart :chartData="this.chartData" />
+    </div>
   </div>
 </template>
 
@@ -18,4 +20,13 @@ export default {
 </script>
 
 <style>
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.line-chart-container {
+  position: relative;
+}
 </style>
