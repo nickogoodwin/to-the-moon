@@ -1,0 +1,72 @@
+<template>
+  <div
+    class="coin row d-flex flex-row align-items-center jusify-content-center"
+  >
+    <div class="col-lg">
+      <CoinInfo
+        :coinData="coinData"
+        :coinId="coinId"
+        :loading="loading"
+      ></CoinInfo>
+    </div>
+    <div class="col-lg">
+      <h2>
+        Current {{ coinData.name }} Price:
+        {{ currencyFormatter(coinData.current_price) }}
+      </h2>
+      <ChartContainer :chart-data="coinData.chartdata"></ChartContainer>
+    </div>
+    <div class="col-lg">
+      <Calculator :coinData="coinData"></Calculator>
+    </div>
+
+    <div class="chart-container"></div>
+  </div>
+</template>
+
+<script>
+import ChartContainer from "../components/chart/ChartContainer.vue";
+import Calculator from "../components/calculator/Calculator.vue";
+import CoinInfo from "../components/content/CoinInfo.vue";
+
+export default {
+  name: "Bitcoin",
+  components: {
+    ChartContainer,
+    Calculator,
+    CoinInfo,
+  },
+  data() {
+    return {
+      loading: false,
+      coinId: "bitcoin",
+      coinData: this.$store.state.coin,
+    };
+  },
+  methods: {
+    fillDataStore() {
+      this.loading = true;
+      this.$store.dispatch("getCurrentCoinData", this.coinId);
+      this.loading = false;
+    },
+    currencyFormatter(price) {
+      const formatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "usd",
+      });
+      let formattedPrice = formatter.format(price);
+      return formattedPrice;
+    },
+  },
+  created() {
+    this.fillDataStore();
+  },
+};
+</script>
+
+<style>
+.col-lg {
+  padding: 2em;
+  border-radius: 2em;
+}
+</style>
