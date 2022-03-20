@@ -1,0 +1,25 @@
+Nicko Goodwin
+
+3/16/2022
+    -created inital project 'shoulda-bought-bitcoin' (to later become 'to-the-moon')
+    -prototyped coin fetching logic with CoinGecko API
+
+3/17/2022
+    -protoyped charting values with vue-chartjs
+    -vue create 'to-the-moon'
+
+3/18/2022
+    -scaffolded views
+    -prototyped Calculator
+
+3/19/2022
+    -fought with Vuex store... i really don't think i'm using mutations and actions correctly. Should I be calling the Coingecko API from each coin component? and then updating the data store from there???
+    -brought in Chart and Calculator components, refactored to fit larger project
+
+3/20/2022
+    -wrote tests...
+    -installed bootstrap
+    -site styling
+    -added a setTimeout :( to the Calculator because of tomfoolery with the vuex store... it would render before data in the store had been updated to the new coin. i.e. Ethereum route would show Bitcoin data...
+    -npm run build
+    -deploy to gh-pages
