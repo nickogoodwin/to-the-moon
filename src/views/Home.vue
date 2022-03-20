@@ -1,6 +1,6 @@
 <template>
   <div class="home container row g-5">
-    <div class="welcome-text col-md">
+    <div class="welcome-text col-md text-start">
       <h1 class="mb-4">Welcome!</h1>
       <h3 class="mb-4">
         Have you ever looked at the prices of cryptocurrency and thought to
@@ -12,8 +12,9 @@
       </h2>
       <h3 class="mb-4">
         Here at <span class="text-primary">To the Moon! &copy;</span>, we
-        believe it's every person's right to ask the question "...What if?"
+        believe it's every person's right to ask the question:
       </h3>
+      <h3 class="mb-4">"What if...?"</h3>
       <h3 class="mb-4">
         Whatever you do with it after that is you're business :)
       </h3>
